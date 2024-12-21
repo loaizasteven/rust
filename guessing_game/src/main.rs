@@ -16,6 +16,12 @@ fn main() {
             .read_line(&mut guess)
             .expect("Failed to read line");
 
+        // quit statement
+        if guess.trim() == "quit" {
+            println!("Quit the game");
+            break;
+        }
+
         //convert type
         let guess: u32 = match guess.trim().parse(){
             Ok(num) => num,
