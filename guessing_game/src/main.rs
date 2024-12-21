@@ -3,7 +3,12 @@ use std::cmp::Ordering;
 use std::io;
 
 fn main() {
-    println!("Guess the number!");
+    println!("\x1b[44m
+    Welcome to the guessing game!
+    The computer will generate a random number between 1 and 100.
+    You have to guess the number.
+    If you want to quit the game, type 'quit'.
+    \x1b[0m");
 
     let secret_number = rand::thread_rng().gen_range(1..=100);
 
