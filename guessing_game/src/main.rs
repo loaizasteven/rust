@@ -16,8 +16,8 @@ fn main() {
             .read_line(&mut guess)
             .expect("Failed to read line");
 
-        // quit statement
-        if guess.trim() == "quit" {
+        // quit statement check lowercase
+        if guess.trim().to_lowercase() == "quit" {
             println!("Quit the game");
             break;
         }
