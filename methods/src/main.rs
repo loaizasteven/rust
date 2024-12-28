@@ -1,4 +1,4 @@
-// create a struct 
+// create a struct
 #[derive(Debug)]
 struct Rectangle {
     width: u32,
@@ -12,6 +12,10 @@ impl Rectangle {
 
     fn debug(&self) {
         println!("Debugging the struct Rectangle: {self:#?}");
+    }
+
+    fn can_hold(&self, other: &Rectangle) -> bool {
+        self.width > other.width && self.height > other.height
     }
 }
 
