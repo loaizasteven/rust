@@ -19,6 +19,19 @@ impl Rectangle {
     fn can_hold(&self, other: &Rectangle) -> bool {
         self.width > other.width && self.height > other.height
     }
+
+    // Assocaited function that is not a method, because it does not have a self parameter in the signature
+    // Self is an alias for the struct after the impl keyword
+    // -----
+    // " Associated functions that aren’t methods are often used for constructors that will return a new 
+    // " instance of the struct. 
+    // " These are often called new, but new isn’t a special name and isn’t built into the language." - Rust Book
+    fn square(size: u32) -> Self {
+        Self {
+            width: size,
+            height: size,
+        }
+    }
 }
 
 fn main() {
@@ -28,5 +41,8 @@ fn main() {
     };
 
     let _area_val = rect.area();
-    rect.debug()
+    rect.debug();
+
+    let sq = Rectangle::square(3); // call assocaited function
+    println!("Square: {sq:#?}");
 }
