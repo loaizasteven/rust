@@ -23,9 +23,10 @@ fn main() {
     // Duplicate user2 using struct update syntax
     let _user2_updated = User{
         _active: Some(false),
-        ..user2 // specify remaining fields to be copied from user2
+        ..user2 // specify remaining fields to be moved/copied from user2
     };
-
+    // note because we changed the value of user2.email, we can't use user2.email anymore since its ownership has been moved to user2_updated
+    // println!("User 2 email is {0}", user2.email); // This will throw an error "value borrowed here after move"
     user2.email = String::from("JaDoe@email.com");
     println!("User 1 name is {0}, email is {1}", user1.name, user1.email);
 }
