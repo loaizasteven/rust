@@ -20,6 +20,11 @@ fn main() {
     };
 
     let mut user2 = build_user(String::from("Jane Doe"), String::from("JDoe@email.com"));
+    // Duplicate user2 using struct update syntax
+    let _user2_updated = User{
+        _active: Some(false),
+        ..user2 // specify remaining fields to be copied from user2
+    };
 
     user2.email = String::from("JaDoe@email.com");
     println!("User 1 name is {0}, email is {1}", user1.name, user1.email);
