@@ -9,6 +9,10 @@ impl Rectangle {
     fn area(&self) -> u32 {
         self.width * self.height
     }
+
+    fn debug(&self) {
+        println!("Debugging the struct Rectangle: {self:#?}");
+    }
 }
 
 fn main() {
@@ -18,5 +22,5 @@ fn main() {
     };
 
     let _area_val = rect.area();
-    println!("Debugging the struct Rectangle: {rect:#?}");
+    rect.debug()
 }
