@@ -1,10 +1,11 @@
-fn main() {
-    struct User{
-        name: String,
-        email: String,
-        _active: Option<bool>,
-    }
+struct User{
+    name: String,
+    email: String,
+    _active: Option<bool>,
+}
 
+fn main() {
+    // Structs are similar to tuples, but with named fields
     fn build_user(name: String, email: String) -> User{
         User{
             name, // With field init shorthand syntax, we can use the variable name as the field name
