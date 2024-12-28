@@ -19,7 +19,11 @@ fn mutable_reference(s2: &mut String){
     println!("Value of s2 is mutable reference of s, {s2}") // s2 chnages the value of s from the main() scope 
 }
 
-fn first_word(s: &String) -> &str {
+// First iteration of first_word function has s: &String as parameter
+// Updating it to s: &str to make it more flexible
+// this allows us to pass in both references of String and &str types and any slices
+// str is a slice of string, it is a reference to a sequence of bytes stored in memory
+fn first_word(s: &str) -> &str {
     let bytes = s.as_bytes(); // elements of string as bytes e.g. "Hello" -> [72, 101, 108, 108, 111] for signed ASCII values 
 
     for (i, &item) in bytes.iter().enumerate() {
