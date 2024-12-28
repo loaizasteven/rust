@@ -1,3 +1,5 @@
+#![allow(dead_code)] // allow unsured code without warning
+
 // create a struct
 #[derive(Debug)]
 struct Rectangle {
