@@ -5,8 +5,8 @@ fn main() {
     reference(&s1);
     println!("Value of s1 is still valid: {s1}"); // s1 is still valid here
 
-    let word = "Hello World";
-    let index = first_word(&word.to_string());
+    let word = String::from("Hello World");
+    let index = first_word(&word);
     println!("The value of the first word is: {index}");
 }
 
@@ -19,14 +19,14 @@ fn mutable_reference(s2: &mut String){
     println!("Value of s2 is mutable reference of s, {s2}") // s2 chnages the value of s from the main() scope 
 }
 
-fn first_word(s: &String) -> String {
+fn first_word(s: &String) -> &str {
     let bytes = s.as_bytes(); // elements of string as bytes e.g. "Hello" -> [72, 101, 108, 108, 111] for signed ASCII values 
 
     for (i, &item) in bytes.iter().enumerate() {
         if item == b' ' { // b' ' is byte literal for space otherwise use signed ASCII value 32 
-            return s[..i].to_string()
+            return &s[..i];
         }
     }
 
-    return s[..].to_string()
+    return &s[..]
 }
