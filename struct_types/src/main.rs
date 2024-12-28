@@ -18,7 +18,7 @@ fn main() {
     let user1 = User {
         name: String::from("John Doe"),
         email: String::from("JDoe@email.com"),
-        _active: None,
+        _active: dbg!(Some(true)), // We can also use the deg! macro for parameters, deb takes and returns ownership
     };
 
     let mut user2 = build_user(String::from("Jane Doe"), String::from("JDoe@email.com"));
@@ -32,4 +32,6 @@ fn main() {
     user2.email = String::from("JaDoe@email.com");
     println!("User 1 name is {0}, email is {1}", user1.name, user1.email);
     println!("User 1 Object is: {user1:#?}"); // pretty print with #?
+    //additionally, we can use the macro
+    dbg!(&user1); // this will print the debug information of the user1 object, along with the file and line number. Use reference to avoid taking ownership of the object
 }
