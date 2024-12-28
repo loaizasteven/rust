@@ -11,11 +11,12 @@ fn main() {
         _active: None,
     };
 
-    let _user2 = User{
+    let mut user2 = User{
         name: String::from("Jane Doe"),
-        email: String::from("JaDoe@email.com"),
+        email: String::from("JDoe@email.com"),
         _active: Some(true), // When setting the value need to specific Some(value_type) or None, due to the Option<> type
     };
 
+    user2.email = String::from("JaDoe@email.com");
     println!("User 1 name is {0}, email is {1}", user1.name, user1.email);
 }
