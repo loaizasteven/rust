@@ -12,17 +12,13 @@ fn main() {
             // method body would be defined here
             match self {
                 Message::Quit => 0,
-                Message::Move { x, y } => {
-                    println!("Move to x: {x}, y: {y}");
-                    1
-                }
                 Message::Write(a) => {
                     println!("Write: {a}"); // "a" is an alias for the value of the String, but also referred to as a "pattern that binds to the value"
-                    2
+                    1
                 }
-                Message::ChangeColor(r, g, b) => {
-                    println!("Change color to r: {r}, g: {g}, b: {b}");
-                    3
+                _ => { // catch-all "_" pattern let rust know that we want to match all other cases but not use the value, otherwise we would have to use a variable name such as "other"
+                    println!("This is a catch-all");
+                    return 2
                 }
             }
         }
