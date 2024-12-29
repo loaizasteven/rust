@@ -17,7 +17,7 @@ fn main() {
                     1
                 }
                 Message::Write(a) => {
-                    println!("Write: {a}");
+                    println!("Write: {a}"); // "a" is an alias for the value of the String, but also referred to as a "pattern that binds to the value"
                     2
                 }
                 Message::ChangeColor(r, g, b) => {
