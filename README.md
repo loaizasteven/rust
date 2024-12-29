@@ -53,3 +53,18 @@ Scalar types represent a single value. Rust has four primary scalar types:
 Compound types can group multiple values into one type. Rust has two primary compound types:
 - **Tuples**: A fixed-size collection of values of different types. Example: `(i32, f64, char)`.
 - **Arrays**: A fixed-size collection of values of the same type. Example: `[i32; 5]` for an array of five 32-bit integers.
+
+## Cross Compiling Rust from Mac to Linux
+See https://betterprogramming.pub/cross-compiling-rust-from-mac-to-linux-7fad5a454ab1. 
+
+For windows use 
+`brew install mingw-w64`
+`cargo build --target x86_64-pc-windows-gnu`
+
+### Known issue
+For `./hello_world` error running executable:
+```bash
+line 1: syntax error near unexpected token `newline`
+```
+
+Easier to install rust on the target machine and compile, until resolved.s
