@@ -2,8 +2,8 @@
 
 Source : [](https://doc.rust-lang.org/book/ch01-03-hello-cargo.html)
 
-- We can create a project using `cargo new`.
-- We can build a project using `cargo build`.
+- We can create a project using `cargo new`. Add `-libs` to create a package with a library target.
+- We can build a project using `cargo build`. This will compile the `main.rs` file to an executable binary.
 - We can build and run a project in one step using `cargo run`.
 - We can build a project without producing a binary to check for errors using `cargo check`.
 - Instead of saving the result of the build in the same directory as our code, Cargo stores it in the `target/debug` directory.
