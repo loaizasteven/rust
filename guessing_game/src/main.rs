@@ -1,4 +1,4 @@
-use rand::Rng;
+use rand::Rng; // Bring the Rng trait into scope, Rng is impl for thread_rng() struct
 use std::cmp::Ordering;
 use std::io;
 
