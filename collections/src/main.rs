@@ -1,8 +1,30 @@
+use std::io;
+use std::collections::HashMap;
+mod new_team;
+
 fn main() {
-    vec_example();
-    vec_ownership();
-    vec_iter();
-    vec_datatypes();
+    let mut buffer = String::new();
+
+    // user input
+    io::stdin()
+        .read_line(&mut buffer)
+        .expect("Failed to read line");
+
+    let buffer = buffer.trim(); //remove newline character 
+
+    if buffer == "vec"{
+        vec_example();
+        vec_ownership();
+        vec_iter();
+        vec_datatypes();
+    }
+    else if buffer == "hashmap" {
+        let scores: HashMap<String, i32> = new_team::initialize_map();
+        println!("{:?}", scores);
+    }
+    else {
+        println!("Invalid input");
+    }
 }
 
 pub fn vec_example() {
