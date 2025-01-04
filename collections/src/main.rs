@@ -13,9 +13,21 @@ pub fn vec_example() {
         Some(third) => println!("The third element is {third}"),
         None => println!("There is no third element."),
     }
+}
+
+pub fn vec_ownership() {
+    // panics because we have an immutable reference to the first element of the vector
+    // and we try to push a new element to the vector
+    let mut v = vec![1, 2, 3, 4, 5];
+    v.push(6);
+    let first = &v[0];
+
+    // v.push(7);
+    println!("The first element is: {first}");
 
 }
 
 fn main() {
     vec_example();
+    vec_ownership();
 }
