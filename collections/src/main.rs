@@ -1,3 +1,10 @@
+fn main() {
+    vec_example();
+    vec_ownership();
+    vec_iter();
+    vec_datatypes();
+}
+
 pub fn vec_example() {
     // There are two ways to reference a value stored in a vector: via indexing or by using the get method. 
     // In the following examples, we’ve annotated the types of the values that are returned from these 
@@ -53,11 +60,4 @@ pub fn vec_datatypes() {
     ];
 
     println!("{:?}", row);
-}
-
-fn main() {
-    vec_example();
-    vec_ownership();
-    vec_iter();
-    vec_datatypes();
 }
