@@ -19,10 +19,12 @@ fn main() {
         vec_datatypes();
     }
     else if buffer == "hashmap" {
-        let scores: HashMap<String, i32> = new_team::initialize_map();
-        println!("{:?}", scores);
+        let mut scores: HashMap<String, i32> = new_team::initialize_map();
         let team_name = String::from("Blue");
-        let score = scores.get(&team_name).unwrap_or(&0);
+        let _score = scores.get(&team_name).unwrap_or(&0); // otherwise use score.get(&team_name).copied.unwrap_or(0), copied will return an Option<i32> that we can use unwrap_or on
+        scores.entry(String::from("Green")).or_insert(100); // add new entry if it doesn't exist
+
+        println!("The final score {:?}", scores);
     }
     else {
         println!("Invalid input");
