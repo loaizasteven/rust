@@ -27,7 +27,16 @@ pub fn vec_ownership() {
 
 }
 
+pub fn vec_iter() {
+    let mut v = vec![100, 32, 57];
+    for i in &mut v {
+        *i += 50; // dereference i and add 50 to the value
+    }
+    println!("{:?}", v);
+}   
+
 fn main() {
     vec_example();
     vec_ownership();
+    vec_iter();
 }
