@@ -21,6 +21,8 @@ fn main() {
     else if buffer == "hashmap" {
         let scores: HashMap<String, i32> = new_team::initialize_map();
         println!("{:?}", scores);
+        let team_name = String::from("Blue");
+        let score = scores.get(&team_name).unwrap_or(&0);
     }
     else {
         println!("Invalid input");
