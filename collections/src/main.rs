@@ -35,8 +35,29 @@ pub fn vec_iter() {
     println!("{:?}", v);
 }   
 
+pub fn vec_datatypes() {
+    // We can define a vector to hold different types of data using an enum
+
+    #[derive(Debug)] 
+    #[allow(dead_code)]
+    enum SpreadsheetCell {
+        Int(i32),
+        Float(f64),
+        Text(String),
+    }
+
+    let row = vec![
+        SpreadsheetCell::Int(3),
+        SpreadsheetCell::Text(String::from("blue")),
+        SpreadsheetCell::Float(10.12),
+    ];
+
+    println!("{:?}", row);
+}
+
 fn main() {
     vec_example();
     vec_ownership();
     vec_iter();
+    vec_datatypes();
 }
